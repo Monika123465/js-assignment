@@ -1,0 +1,1 @@
+const webtech=['frontend','backend','fullstack']
