@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>BMI CALCULATOR</h1>
+    <p>Weight</p>
+    <input type="Number" placeholder="enter weight in Kg" id="weight">
+    <p>Height</p>
+    <input type="number" placeholder="enter height" id="height">
+    <button  id="btn">BMI</button>
+    <div id="result" ></div>
+    
+</body>
+</html>
+<script>
+    const button=document.getElementById('btn')
+    button.addEventListener("click",calculatebmi)
+
+    function calculatebmi(e){
+        e.preventDefault()
+        
+
+        let weight=document.getElementById('weight').value
+        let height=document.getElementById('height').value
+        let result=document.getElementById('result')
+
+        if(weight===""){
+            console.log("provide a valid weight in kg")
+        }else if(height===""){
+            console.log('provide a valid height')
+        }else{
+            let bmi=(weight/((height*height)/1000)).toFixed(2)
+            if (bmi < 18.5) result.innerHTML =
+            `Under Weight : <span>${bmi}</span>`;
+  
+        else if (bmi >= 18.5 && bmi < 24.9) 
+            result.innerHTML = 
+                `Normal : <span>${bmi}</span>`;
+  
+        else if(bmi>=25 && bmi<29.9) result.innerHTML =
+            `Over Weight : <span>${bmi}</span>`;
+            else result.innerHTML=`obese:<span>${bmi}</span>`
+    }
+
+        }
+
+    
+</script>
